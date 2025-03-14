@@ -1,209 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/Apple_logo_white.png" />
+    <link rel="stylesheet" href="style.css" />
     <title>Site E-commerce</title>
-    <style>
-        /* Styles généraux */
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #f4f4f4;
-            --text-color: #333;
-            --button-color: #ff9800;
-            --button-hover: #e68900;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--secondary-color);
-        }
-        
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--primary-color);
-            padding: 1rem 2rem;
-            color: white;
-        }
-        .navbar img {
-            height: 40px;
-        }
-        .navbar button {
-            background-color: var(--button-color);
-            border: none;
-            padding: 10px 15px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .navbar button:hover {
-            background-color: var(--button-hover);
-        }
-        
-        /* Hero section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px;
-            background-color: var(--primary-color);
-            color: white;
-            flex-wrap: wrap;
-        }
-        .hero-text {
-            max-width: 50%;
-        }
-        .hero img {
-            max-width: 45%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        /* Grid de produits */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-        .grid a {
-            display: block;
-            text-decoration: none;
-            color: var(--text-color);
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .grid a:hover {
-            transform: translateY(-5px);
-        }
-        .grid img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        /* Formulaire de contact */
-        .contact {
-            padding: 40px;
-            text-align: center;
-        }
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-        .contact input, .contact textarea, .contact button {
-            margin-bottom: 15px;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .contact button {
-            background-color: var(--button-color);
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .contact button:hover {
-            background-color: var(--button-hover);
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-text {
-                max-width: 100%;
-            }
-            .hero img {
-                max-width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <img src="https://placehold.co/100x40" alt="Logo">
-        <button onclick="togglePrix()">Changer prix</button>
+      <img src="./img/Apple_logo_white.png" alt="Logo" />
+      <button id="btn-changer-prix" onclick="togglePrix()">
+        Passer en mode pro
+      </button>
     </nav>
-    
+
     <section class="hero">
-        <div class="hero-text">
-            <h1>Bienvenue sur notre boutique</h1>
-            <p>Découvrez nos produits de qualité au meilleur prix.</p>
-        </div>
-        <img src="https://i.ytimg.com/vi/sb2OKJhjzUo/maxresdefault.jpg" alt="Illustration">
+      <div class="hero-text">
+        <h1>Bienvenue sur notre boutique</h1>
+        <p>Découvrez nos produits de qualité au meilleur prix.</p>
+      </div>
+      <img
+        src="https://i.ytimg.com/vi/sb2OKJhjzUo/maxresdefault.jpg"
+        alt="Illustration"
+      />
     </section>
-    
+
     <section class="grid">
-        <a href="#" class="product">
-            <img src="https://www.cdiscount.com/pdt2/e/e/n/1/700x700/ip15128green/rw/iphone-15-128gb-vert.jpg" alt="Produit 1">
-            <h3>Produit 1</h3>
-            <p class="price">100€</p>
-        </a>
-        <a href="#" class="product">
-            <img src="https://www.cdiscount.com/pdt2/i/n/k/1/700x700/ip15128pink/rw/iphone-15-128gb-rose.jpg" alt="Produit 2">
-            <h3>Produit 2</h3>
-            <p class="price">150€</p>
-        </a>
-        <a href="#" class="product">
-            <img src="https://www.cdiscount.com/pdt2/a/c/k/1/700x700/ip15128black/rw/iphone-15-128gb-noir.jpg" alt="Produit 3">
-            <h3>Produit 3</h3>
-            <p class="price">200€</p>
-        </a>
+      <a href="#" class="product">
+        <img
+          src="https://www.cdiscount.com/pdt2/e/e/n/1/700x700/ip15128green/rw/iphone-15-128gb-vert.jpg"
+          alt="Produit 1"
+        />
+        <h3>Produit 1</h3>
+        <p class="price">100€</p>
+      </a>
+      <a href="#" class="product">
+        <img
+          src="https://www.cdiscount.com/pdt2/i/n/k/1/700x700/ip15128pink/rw/iphone-15-128gb-rose.jpg"
+          alt="Produit 2"
+        />
+        <h3>Produit 2</h3>
+        <p class="price">150€</p>
+      </a>
+      <a href="#" class="product">
+        <img
+          src="https://www.cdiscount.com/pdt2/a/c/k/1/700x700/ip15128black/rw/iphone-15-128gb-noir.jpg"
+          alt="Produit 3"
+        />
+        <h3>Produit 3</h3>
+        <p class="price">200€</p>
+      </a>
     </section>
-    
+
     <section class="contact">
-        <h2>Contactez-nous</h2>
-        <form>
-            <input type="text" placeholder="Votre nom" required>
-            <input type="email" placeholder="Votre email" required>
-            <textarea placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
+      <h2>Contactez-nous</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required />
+        <input type="email" placeholder="Votre email" required />
+        <textarea placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
     </section>
-    
+
     <footer class="footer">
-        <p>&copy; 2025 Boutique en ligne</p>
+      <p>&copy; 2025 Boutique en ligne</p>
     </footer>
-    
-    <script>
-        const prixNormaux = [100, 150, 200];
-        const prixPro = prixNormaux.map(prix => prix * 0.8);
-        let modePro = false;
-        
-        function togglePrix() {
-            modePro = !modePro;
-            document.querySelectorAll('.price').forEach((el, index) => {
-                el.textContent = modePro ? prixPro[index] + '€' : prixNormaux[index] + '€';
-            });
-        }
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
